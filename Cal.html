@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with History</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Style for the button */
+        .larger-button {
+            width: 150px; /* Default width for larger screens */
+            height: 150px; /* Default height for larger screens */
+            font-size: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* Media query for screens smaller than 768px */
+        @media screen and (max-width: 768px) {
+            .larger-button {
+                width: 120px; /* Adjusted width for smaller screens */
+                height: 150px; /* Adjusted height for smaller screens */
+                font-size: 20px; /* Adjusted font size for smaller screens */
+            }
+        }
+
+        /* Add any other styles you want here */
+    </style>
+
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div class="buttons">
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <div><button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('*')">*</button>
+        </div>
+           <div> <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculate()">=</button>            
+        </div>
+        </div>
+        <div class="history">
+            <h3>History</h3>
+            <ul id="history-list"></ul>
+        </div>
+        
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
